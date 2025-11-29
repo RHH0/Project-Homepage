@@ -1,0 +1,253 @@
+body{
+    display: flex;
+    flex-direction: column;    
+    gap: var(--padding-lg);
+    margin: 0 auto;
+}
+
+header, main, footer{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-sm);
+    padding: var(--padding-base);
+}
+/*header*/
+header *,
+header{
+    position: relative;
+}
+
+header{
+    padding-top: var(--padding-base);
+    align-items: center;
+}
+
+.lg-shape,
+.sm-shape{
+    position: absolute;    
+    top: 0;
+    left: 0;
+}
+
+.lg-shape{
+    width: 100%;
+    height: 60vw;
+}
+.sm-shape{
+    width: 50%;
+    height: 30vw;
+}
+
+.my-picture{
+    width: 90%;
+    height: 100vw;
+    object-fit: cover;
+}
+
+header .container{
+   display: flex;
+   flex-direction: column;
+   gap: var(--padding-sm)
+}
+
+.name{
+    position: absolute;
+    top: calc(100vw - 8rem);
+    left: 50%;
+    transform: translateX(-50%);    
+    text-align: center;
+}
+
+header ul{
+    justify-content: center;
+    display: flex;
+    gap: var(--padding-base);
+}
+
+header li img{
+    width: 3rem;
+}
+
+/*main*/
+
+main > .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: var(--padding-base);
+}
+main .card{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-sm);
+}
+main .card .screenshot{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-base);
+}
+
+.screenshot div{
+    text-align: center;
+}
+main .card .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--padding-sm);
+}
+
+main .card .container ul{
+    display: flex;
+    gap: var(--padding-sm);
+    align-items: center;
+}
+
+main .card .container li img{
+    width: 1.5rem;
+}
+
+.card .description{
+    padding: 0 var(--padding-sm);
+    min-height: 150px;
+}
+
+/*footer*/
+footer{
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    gap: var(--padding-lg);
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-base);
+    padding-left: var(--padding-base);
+    padding-right: var(--padding-base);
+}
+.contact .container{
+    display: grid;
+    grid-template-columns: 3rem auto;
+    gap: var(--padding-sm);
+    align-items: center;
+}
+
+.contact .container img{
+    width: 0;
+}
+
+.contact ul{
+    display: flex;
+    gap: var(--padding-base);
+    justify-content: center;
+}
+
+.contact ul img{
+    width: 5rem;
+}
+
+
+.call-pic{
+    width: 100%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+}
+@media(width >= 640px){
+    .contact .container img{
+        width: 3rem;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        padding: var(--padding-base);
+        gap: var(--padding-sm);
+        justify-content: space-between;
+    }
+
+    .contact ul{
+        justify-content: flex-start;
+    }
+    .call-pic{
+        width: 30vw;
+    }
+    .contact{
+        padding: 0;
+    }
+}
+
+@media(640px <= width < 1024px) {
+    header{
+        display: block;
+    }
+
+    header .container{
+        display: block;
+        padding: var(--padding-lg) var(--padding-sm);        
+        margin: 10rem var(--padding-base);
+        margin-bottom: 0;
+    }
+
+    .my-picture{
+        float: left;
+        width: 45vw;
+        height: 60vw;
+        margin-bottom: var(--padding-sm);
+        margin-right: var(--padding-sm);
+    }   
+
+    .name{
+        inset: 4rem 4rem auto auto;
+        transform: none;
+    }
+    header h2{
+        padding-bottom: var(--padding-sm);
+    }
+
+    header ul{
+        display: none;
+    }
+}
+
+@media(width >= 1024px){
+    header{
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .my-picture{
+        width: 40vw;
+        height: auto;
+        flex: 0 0 auto;
+    }
+
+    header .container{
+        padding: var(--padding-sm);
+    }
+    
+    header h2{
+        align-self: flex-start;
+    }
+
+    header ul{
+        justify-content: end;
+    }
+
+    .name{
+        width: 40vw;
+        transform: none;
+        inset: initial;
+        bottom: var(--padding-base);
+    }
+
+    .lg-shape{
+        height: 30vw;
+    }
+
+    .call-pic{
+        width: 50vw;
+        aspect-ratio: 16/ 9;
+    }
+}
